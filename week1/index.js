@@ -35,12 +35,36 @@ const alexSportBudget = 3000;
 // 條件二：瑜伽團課只能一次買 3 堂
 // 條件三：一定要花到 2400 以上，並購買 5 堂課程
 
-let AlexBudget = yogaGroupClasses*3;
-AlexBudget+=weightTrainingGroupClasses;
-AlexBudget+=weightTrainingOneToOneClasses;
-
-console.log(`Alex 買完課程了，他一共剩下 ${alexSportBudget-AlexBudget} 元`);
-
+function getBudgetClasses(allClassesPrice)
+{
+   let alexBudget = 0;
+   let buyClassesCount = 0;
+   let buyAllClasses =[];
+  
+  // 取得購買基本課程
+   allClassesPrice.forEach(function(item, index, arr) {       
+        if(alexBudget < alexSportBudget && arr[index].atLeastCount >0) {    
+           alexBudget += arr[index].classesPrice*arr[index].atLeastCount;
+           buyAllClasses.push(arr[index].classesName+"-"+arr[index].atLeastCount+"堂");
+           buyClassesCount+=arr[index].atLeastCount;
+        }
+   });
+ // console.log(`Alex 買完課程了，他一共買了 ${buyAllClasses} `);
+ // console.log(`Alex 買完課程了，他一共花費 ${alexBudget} 元`);
+  
+  // 取得額外購買課程
+   allClassesPrice.forEach(function(item, index, arr) {     
+       if((alexBudget + arr[index].classesPrice) > 2400 && (alexBudget + arr[index].classesPrice) <= alexSportBudget){
+         buyAllClasses.push(arr[index].classesName+"-1堂");
+         alexBudget+=arr[index].classesPrice;
+       } 
+   });
+  
+  console.log(`Alex 買完課程了，他一共買了 ${buyAllClasses} `);
+  console.log(`Alex 買完課程了，他一共花費 ${alexBudget} 元`);
+  console.log(`Alex 買完課程了，他一共剩下 ${alexSportBudget-alexBudget} 元`);
+}
+getBudgetClasses(allClassesPrice);
   
 // ### 題目四：線稿圖截圖，看圖宣告變數
 // 請參考資料夾內 q4.webp 圖片
