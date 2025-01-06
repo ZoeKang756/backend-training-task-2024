@@ -34,7 +34,7 @@ const alexSportBudget = 3000;
 // 條件一：一定至少要買 1 堂重訓團課和瑜伽團課
 // 條件二：瑜伽團課只能一次買 3 堂
 // 條件三：一定要花到 2400 以上，並購買 5 堂課程
-
+let allClassesPrice = [{classesID:1, classesName:"yogaGroupClasses", classesPrice:300, atLeastCount:3}, {classesID:2,classesName:"weightTrainingGroupClasses", classesPrice:500,atLeastCount:1}, {classesID:3, classesName:"weightTrainingOneToOneClasses", classesPrice:1500, atLeastCount:0}];
 function getBudgetClasses(allClassesPrice)
 {
    let alexBudget = 0;
@@ -69,6 +69,7 @@ getBudgetClasses(allClassesPrice);
 // ### 題目四：線稿圖截圖，看圖宣告變數
 // 請參考資料夾內 q4.webp 圖片
 // 請依照你看到的內容來嘗試設計變數和值（至少 3 個）
+
 
 // ### 題目五：布林值與變數定義，看是否有用對 const, let
 // 情境：Alex 在往健身房的路上，望向城市的風景，請描述她看到的一切，並宣告變數與賦予值
