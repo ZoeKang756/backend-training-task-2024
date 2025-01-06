@@ -28,6 +28,7 @@ const yogaGroupClasses = 300;
 const weightTrainingGroupClasses = 500;
 const weightTrainingOneToOneClasses = 1500;
 const alexSportBudget = 3000;
+let classCount = 5;
 
 // ### 題目三：變數計算
 // 呈上題，Alex 想要規劃好自己的運動課程，需符合以下三個條件，請將花費總數計算在 AlexBudget 上，一起幫幫他吧！
@@ -73,7 +74,7 @@ function getClassesInBudget(allClassInfo, choiceClasses, budget)
           }
      });
   
-    if(run_again) getClassesInBudget(allClassInfo,choiceClasses, budget);
+    if(run_again  && choiceClasses.length < classCount) getClassesInBudget(allClassInfo,choiceClasses, budget);
     else
     {
        let allClassesImpo = {"choiceClasses":choiceClasses, 'budget':budget}; 
