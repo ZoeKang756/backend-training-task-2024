@@ -38,7 +38,6 @@ let alexBudget = 0;
 // 條件三：一定要花到 2400 以上，並購買 5 堂課程
 
 let allClassInfo = [{classesID:1, classesName:"瑜伽團課", classesPrice:300, atLeastCount:3}, {classesID:2,classesName:"重訓團課", classesPrice:500,atLeastCount:1}, {classesID:3, classesName:"重訓1對1課程", classesPrice:1500, atLeastCount:0}];
-let classCount = 7;
 
 let choiceClasses =[];
 let allClassesImpo = {};
