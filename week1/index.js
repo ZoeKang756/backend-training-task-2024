@@ -29,6 +29,7 @@ const weightTrainingGroupClasses = 500;
 const weightTrainingOneToOneClasses = 1500;
 const alexSportBudget = 3000;
 let classCount = 5;
+let alexBudget = 0;
 
 // ### 題目三：變數計算
 // 呈上題，Alex 想要規劃好自己的運動課程，需符合以下三個條件，請將花費總數計算在 AlexBudget 上，一起幫幫他吧！
@@ -37,57 +38,63 @@ let classCount = 5;
 // 條件三：一定要花到 2400 以上，並購買 5 堂課程
 
 let allClassInfo = [{classesID:1, classesName:"瑜伽團課", classesPrice:300, atLeastCount:3}, {classesID:2,classesName:"重訓團課", classesPrice:500,atLeastCount:1}, {classesID:3, classesName:"重訓1對1課程", classesPrice:1500, atLeastCount:0}];
+let classCount = 7;
+
 let choiceClasses =[];
-function getClassesInBudget(allClassInfo, choiceClasses, budget)
+let allClassesImpo = {};
+function getClassesInBudget(allClassInfo, choiceClasses, budget, classCount)
 {      
      allClassInfo.forEach(function(item, index, arr) {    
           if(arr[index].atLeastCount > 0)
-          {
-               if(budget - arr[index].classesPrice*arr[index].atLeastCount > 0)
-               { 
-                    for (let i = 0; i < arr[index].atLeastCount; i++) {
-                         choiceClasses.push(arr[index].classesName);
-                         budget -= arr[index].classesPrice;
-                    }
-               }                
+          { 
+              if(choiceClasses.length + arr[index].atLeastCount <= classCount)
+              {
+                if(budget - arr[index].classesPrice*arr[index].atLeastCount > 0) 
+                { 
+                  for (let i = 0; i < arr[index].atLeastCount; i++) {
+                    choiceClasses.push(arr[index].classesName);
+                    budget -= arr[index].classesPrice;
+                  }
+                } 
+              }
           }
-          else
-          {
+          else {
                if(budget - arr[index].classesPrice>0)
                 {
                     choiceClasses.push(arr[index].classesName);
                     budget -= arr[index].classesPrice;
                 }              
-            }                                    
+          }                                    
      });
   
     
-     let run_again = false;
+     let availClassInBudgetCount = 0;
+  
      allClassInfo.forEach(function(item, index, arr) {  
-         if(arr[index].atLeastCount > 0)
+          if(arr[index].atLeastCount > 0)
           {
-              if(budget - arr[index].classesPrice*arr[index].atLeastCount > 0) run_again = true;
+              if(budget - arr[index].classesPrice*arr[index].atLeastCount >= 0)  availClassInBudgetCount++;
           }
-          else
-          {
-              if(budget - arr[index].classesPrice>0) run_again = true;
+          else{
+              if(budget - arr[index].classesPrice >= 0) availClassInBudgetCount++;              
           }
      });
+ 
   
-    if(run_again  && choiceClasses.length < classCount) getClassesInBudget(allClassInfo,choiceClasses, budget);
+    if(availClassInBudgetCount && choiceClasses.length < classCount) getClassesInBudget(allClassInfo,choiceClasses, budget, classCount);
     else
     {
-       let allClassesImpo = {"choiceClasses":choiceClasses, 'budget':budget}; 
-       return allClassesImpo;
-    }
-    
+       allClassesImpo = {"choiceClasses":choiceClasses, 'budget':budget};
+    }  
 }
 
-let classesInBudget = getClassesInBudget(allClassInfo, choiceClasses, alexSportBudget);
-console.log(`Alex 買完課程了，他一共買了 ${classesInBudget.choiceClasses} `);
-console.log(`Alex 買完課程了，他一共花費 ${alexSportBudget-classesInBudget.budget} 元`);
-console.log(`Alex 買完課程了，他一共剩下 ${classesInBudget.budget} 元`);
-  
+getClassesInBudget(allClassInfo, choiceClasses, alexSportBudget, classCount);
+alexBudget = alexSportBudget-allClassesImpo.budget;
+
+console.log(`Alex 買完課程了，他一共買了 ${allClassesImpo.choiceClasses} `);
+console.log(`Alex 買完課程了，他一共花費 ${alexBudget} 元`);
+console.log(`Alex 買完課程了，他一共剩下 ${allClassesImpo.budget} 元`);
+
 // ### 題目四：線稿圖截圖，看圖宣告變數
 // 請參考資料夾內 q4.webp 圖片
 // 請依照你看到的內容來嘗試設計變數和值（至少 3 個）
