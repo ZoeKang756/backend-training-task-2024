@@ -89,10 +89,26 @@ console.log(`小明總共需支付 $${coachBonus} 獎金`);
 
 let playerA = '剪刀';
 let playerB = '剪刀';
-if (playerA === '剪刀' && playerB === '剪刀') {
-  console.log('平手');
-}
+
 // 練習：使用 if, else if, else 判斷輸贏
+if (playerA === '剪刀') 
+{   
+   if(playerB === '剪刀') console.log('平手');
+   else if(playerB === '石頭') console.log('playerB 贏了');
+   else console.log('playerA 贏了');   
+}
+else if(playerA === '石頭')
+{
+   if(playerB === '剪刀') console.log('playerA 贏了');   
+   else if(playerB === '石頭') console.log('平手');
+   else console.log('playerB 贏了');
+}
+else
+{
+   if(playerB === '剪刀') console.log('playerB 贏了');   
+   else if(playerB === '石頭') console.log('playerA 贏了');   
+   else console.log('平手');
+}   
 
 // ### 題目六：陣列、物件變數定義
 // 這是一間位於高雄市的健身房，名為「高雄市健身教練聯盟」，專注於提供高品質的健身指導服務。健身房內有多位專業教練，以下是兩位教練的詳細介紹：
