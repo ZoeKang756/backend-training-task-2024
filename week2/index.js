@@ -48,14 +48,14 @@ let giftPriceRule = 1599; /* 贈品消費門檻 */
 let BobPrice = 1800; /* Bob 消費金額 */
 let BobIsVip = false; /* Bob 是否為 VIP */
 
-// 練習：（可自行將下方程式碼的註解刪除，完成答題）
-// if () {
-//   console.Log（"客戶您好，您有符合贈品資格"）；
-// } else {
-//   console.Log（"客戶您好，您沒有符合贈品資格"）
-// }
-
+if (BobIsVip || BobPrice >= giftPriceRule){
+   console.log('客戶您好，您有符合贈品資格');
+   giftNum--;
+} else {
+  console.log("客戶您好，您沒有符合贈品資格");
+}
 console.log(`贈品還剩下${giftNum}個`);
+
 
 // ### 題目四：
 // 健身房的業績獎金計算
@@ -72,8 +72,15 @@ let baseBonus = 6000; // 基本獎金
 let coachBonus = baseBonus; // 教練業績獎金帳單，並已加入條件一基本獎金
 
 // 練習：計算教練業績獎金
-
+if(coachIncome >=300000){  
+   coachBonus+= coachIncome*0.2;
+}else if(coachIncome >=100000 && coachIncome <300000){
+   coachBonus+= coachIncome*0.15;
+}else{
+   coachBonus+= coachIncome*0.1;
+}
 console.log(`小明總共需支付 $${coachBonus} 獎金`);
+
 
 // ### 題目五：剪刀石頭布
 // 請寫程式來判斷剪刀石頭布的輸贏
