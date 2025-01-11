@@ -130,7 +130,30 @@ else
 - 是否接收新學員：否
 */
 
-const gymCoach = {}; // 練習：使用物件變數定義兩位教練的資訊
+// 練習：使用物件變數定義兩位教練的資訊
+const gymCoach = {
+   storeName: '高雄市健身教練聯盟',
+   coachs : [{
+          name:'王教練',
+          expertise:'力量訓練、減重課程',
+          class:[
+              { name:'個人訓練課程', price:'2000', time:'60',isOrder:'Y'},
+              { name:'團體訓練課程',price:'1500',time:'90',isOrder:'N'}
+          ],
+          introduce:'王教練擁有 5 年教學經驗，專精於提升學員的肌力與減脂，適合希望快速達成體能目標的學員。',
+          isRecruitStudents:'Y'      
+      },
+      {
+          name:'李教練',
+          expertise:'瑜伽、體態雕塑',
+          class:[
+            { name:'個人訓練課程', price:'1800', time:'50', isOrder:'N'},
+            { name:'團體訓練課程', price:'1200', time:'75', isOrder:'Y'}
+          ],
+          introduce:'李教練是一位瑜伽大師，擁有 10 年教學經驗，擅長幫助學員雕塑完美體態，適合希望改善姿態與柔軟度的學員。',
+          isRecruitStudents:'N'      
+      }]
+}
 
 console.log(gymCoach);
 
