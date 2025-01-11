@@ -3,37 +3,37 @@
 // 若不確定答案，可將 code 貼在 chrome console 顯示後，再回頭補知識點。
 let a = 9;
 let b = 13;
-console.log(a > 0);
-console.log(b > a);
-console.log(a + b > 1);
+console.log(a > 0); // true
+console.log(b > a); // true
+console.log(a + b > 1); // true
 let c = 51;
 let d = 163;
-console.log(c == d);
-console.log(c !== d);
+console.log(c == d); // false
+console.log(c !== d); // true
 let e = 28;
 let f = 45;
-console.log(f >= e);
-console.log(f != e);
-console.log(f == e);
+console.log(f >= e); // true
+console.log(f != e); // true
+console.log(f == e); // false
 
 // ### 題目二：比較運算子 + 強制轉型
 // 請回答每個 console.log 的值為？
 let g = 8;
 let h = '8';
-console.log(g * h == 88);
-console.log(g * h == 64);
-console.log(g * h === 64);
+console.log(g * h == 88); // false ,g * h = 64
+console.log(g * h == 64); // true ,g * h = 64, h被轉型為數值
+console.log(g * h === 64); // true ,g * h = 64, h被轉型為數值
 
 let i = '9';
 let j = '9';
-console.log(i + j == 99);
-console.log(i + j === '99');
-console.log(i + j === 99);
+console.log(i + j == 99); // true ,i + j = '99',因為沒有比較型別，故這裡為true
+console.log(i + j === '99'); // true ,i + j = '99' , 型別相同
+console.log(i + j === 99); // false ,i + j = '99', 型別不相同
 
 var k = 3;
 var l = '8';
 // 請文字解釋為什麼
-console.log(k * l > 21);
+console.log(k * l > 21); //true, var k * l = 24, 因為乘法, l 被強制轉成數字型別
 
 // ### 題目三：邏輯運算子 + if, else
 // 情境：健身房週年慶，買課程送贈品
