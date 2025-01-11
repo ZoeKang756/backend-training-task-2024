@@ -177,14 +177,14 @@ let performanceData = {
 
 // 練習：第一位教練（可將下方程式碼註解移除，完成答題）
 
- if (performanceData.coaches[0].performance <= 50000 ) {
+ if (performanceData.coaches[0].performance < 50000 ) {
     // 請填寫第一位教練業績增長程式碼，使用 +=
     performanceData.coaches[0].performance+=8000;
  }
 
 // 練習：第二位教練（可將下方程式碼註解移除，完成答題）
 
-if (performanceData.coaches[1].performance <= 50000) {
+if (performanceData.coaches[1].performance < 50000) {
     // 請填寫第二位教練業績增長程式碼，使用 +=
    performanceData.coaches[1].performance+=12000;
 }
@@ -198,7 +198,18 @@ console.log(performanceData);
   - 瑜伽每分鐘消耗 5 卡
   - 騎腳踏車每分鐘消耗 8 卡
 */
-const activities = {}; // 練習：使用 `物件包含物件` 的格式定義運動類型與每分鐘消耗卡路里
+const activities = {
+   treadmill:{
+      calories:10
+   },
+   yoga:{
+      calories:5
+   },
+   cycling:{
+      calories:8
+   }
+}; 
+// 練習：使用 `物件包含物件` 的格式定義運動類型與每分鐘消耗卡路里
 
 // ## 題目九
 // 情境：算小明今天的卡路里消耗
@@ -209,6 +220,7 @@ let calorieBurn = 0;
 
 // 練習：計算小明今日消耗的卡路里
 
+calorieBurn = activities.cycling.calories*10 + activities.treadmill.calories*30 + activities.yoga.calories*40 + activities.cycling.calories*10;
 console.log(`小明今日一共消耗約 ${calorieBurn} 卡路里。`);
 
 // ### 10. 運動量是否達標！
