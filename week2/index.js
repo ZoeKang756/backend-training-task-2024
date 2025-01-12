@@ -246,15 +246,13 @@ const exerciseRecords = [
   { day: 'Saturday', duration: 60, heartRate: 145 },
 ];
 
-// 範例：週一
-if (exerciseRecords[0].duration >= 30 && exerciseRecords[0].heartRate >= 130) {
-  totalDuration += mondayDuration;
-  validDays += 1;
+for (let i = 0; i < exerciseRecords.length; i++) {
+  if (exerciseRecords[i].duration >= 30 && exerciseRecords[i].heartRate >= 130) {
+      totalDuration += exerciseRecords[i].duration;
+      validDays++;
+  }
 }
 
-// 練習：週二、週三、週四、週五、週六
-
 // 練習：判斷是否符合 533 原則
-let isCompliant; // 條件：運動次數至少 5 次 || 運動時間累績達標 >= 150;
-
+let isCompliant = validDays >=5 || totalDuration>=150;  // 條件：運動次數至少 5 次 || 運動時間累績達標 >= 150;
 console.log(`小明的運動量是否達標: ${isCompliant}`); // 輸出: 小明的運動量是否達標
