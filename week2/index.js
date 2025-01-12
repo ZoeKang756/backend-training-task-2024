@@ -176,19 +176,15 @@ let performanceData = {
 };
 
 // 練習：第一位教練（可將下方程式碼註解移除，完成答題）
-
- if (performanceData.coaches[0].performance < 50000 ) {
-    // 請填寫第一位教練業績增長程式碼，使用 +=
-    performanceData.coaches[0].performance+=8000;
+ for(let i =0; i<performanceData.coaches.length; i++) {
+     performanceData.coaches[i].performanceShortage = 0;
+    
+     if (performanceData.coaches[i].performance < 50000 ) {
+           performanceData.coaches[i].performanceShortage = 50000-performanceData.coaches[i].performance;
+           performanceData.coaches[i].performance+=(50000-performanceData.coaches[i].performanceShortage);
+     }
  }
-
-// 練習：第二位教練（可將下方程式碼註解移除，完成答題）
-
-if (performanceData.coaches[1].performance < 50000) {
-    // 請填寫第二位教練業績增長程式碼，使用 +=
-   performanceData.coaches[1].performance+=12000;
-}
-
+ 
 console.log(performanceData);
 
 // ### 題目八
