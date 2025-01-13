@@ -251,4 +251,4 @@ for (let i = 0; i < exerciseRecords.length; i++) {
 
 // 練習：判斷是否符合 533 原則
 let isCompliant = validDays >=5 || totalDuration>=150;  // 條件：運動次數至少 5 次 || 運動時間累績達標 >= 150;
-console.log(`小明的運動量是否達標: ${isCompliant}`); // 輸出: 小明的運動量是否達標
+console.log(`小明的運動量是否達標: ${isCompliant}`); // 輸出: "小明的運動量是否達標: false"
