@@ -91,23 +91,17 @@ let playerA = '剪刀';
 let playerB = '剪刀';
 
 // 練習：使用 if, else if, else 判斷輸贏
-if (playerA === '剪刀') 
+if ((playerA === '剪刀' && playerB === '剪刀') || (playerA === '石頭' && playerB === '石頭')|| (playerA === '布' && playerB === '布'))
 {   
-   if(playerB === '剪刀') console.log('平手');
-   else if(playerB === '石頭') console.log('playerB 贏了');
-   else console.log('playerA 贏了');   
+   console.log('平手');
 }
-else if(playerA === '石頭')
+else if((playerA === '石頭' && playerB === '剪刀') || (playerA === '剪刀' && playerB === '布')|| (playerA === '布' && playerB === '石頭'))
 {
-   if(playerB === '剪刀') console.log('playerA 贏了');   
-   else if(playerB === '石頭') console.log('平手');
-   else console.log('playerB 贏了');
+   console.log('playerA 贏了');     
 }
 else
 {
-   if(playerB === '剪刀') console.log('playerB 贏了');   
-   else if(playerB === '石頭') console.log('playerA 贏了');   
-   else console.log('平手');
+   console.log('playerB 贏了');      
 }   
 
 // ### 題目六：陣列、物件變數定義
