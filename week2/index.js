@@ -127,6 +127,8 @@ else
 // 練習：使用物件變數定義兩位教練的資訊
 const gymCoach = {
    storeName: '高雄市健身教練聯盟',
+   location: "高雄市",
+   description: "專注於提供高品質的健身指導服務",
    coachs : [{
           name:'王教練',
           expertise:'力量訓練、減重課程',
