@@ -131,23 +131,23 @@ const gymCoach = {
    description: "專注於提供高品質的健身指導服務",
    coachs : [{
           name:'王教練',
-          expertise:'力量訓練、減重課程',
+          expertise:['力量訓練、減重課程'],
           class:[
-              { name:'個人訓練課程', price:'2000', time:'60',isOrder:'Y'},
-              { name:'團體訓練課程',price:'1500',time:'90',isOrder:'N'}
+              { name:'個人訓練課程', price:'2000', time:'60',isOrder:true},
+              { name:'團體訓練課程',price:'1500',time:'90',isOrder:false}
           ],
           introduce:'王教練擁有 5 年教學經驗，專精於提升學員的肌力與減脂，適合希望快速達成體能目標的學員。',
-          isRecruitStudents:'Y'      
+          isRecruitStudents:true    
       },
       {
           name:'李教練',
-          expertise:'瑜伽、體態雕塑',
+          expertise:['瑜伽、體態雕塑'],
           class:[
-            { name:'個人訓練課程', price:'1800', time:'50', isOrder:'N'},
-            { name:'團體訓練課程', price:'1200', time:'75', isOrder:'Y'}
+            { name:'個人訓練課程', price:'1800', time:'50', isOrder:false},
+            { name:'團體訓練課程', price:'1200', time:'75', isOrder:true}
           ],
           introduce:'李教練是一位瑜伽大師，擁有 10 年教學經驗，擅長幫助學員雕塑完美體態，適合希望改善姿態與柔軟度的學員。',
-          isRecruitStudents:'N'      
+          isRecruitStudents:false     
       }]
 }
 
