@@ -175,7 +175,7 @@ let performanceData = {
     
      if (performanceData.coaches[i].performance < 50000 ) {
            performanceData.coaches[i].performanceShortage = 50000-performanceData.coaches[i].performance;
-           performanceData.coaches[i].performance+=(50000-performanceData.coaches[i].performanceShortage);
+           performanceData.coaches[i].performance+=performanceData.coaches[i].performanceShortage;
      }
  }
  
